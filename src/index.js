@@ -45,3 +45,7 @@ getMovies().then((movies) => {
     console.log(error);
 });
 
+$("#addMV").on("click",function(){
+
+    $(".movieList").append(`<td>$("#addMovie").val()</td><td>$("#addRating").val()</td>`)
+})
