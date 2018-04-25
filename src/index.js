@@ -36,8 +36,8 @@ getMovies().then((movies) => {
     console.log('Here are all the movies:');
     movies.forEach(({title, rating, id}) => {
         console.log(`id#${id} - ${title} - rating: ${rating}`);
-        $('.movieList').append(`<li>${title}</li>`);
-        //$("table").append(`<tr><td>${id}</td><td>${title}</td><td>${rating}</td><td><button>delete</button></td></tr>`);
+        // $('.movieList').append(`<li>${title}</li>`);
+        $("table").append(`<tr><td>${id}</td><td>${title}</td><td>${rating}</td><td><button>delete</button></td></tr>`);
     });
 
 }).catch((error) => {
