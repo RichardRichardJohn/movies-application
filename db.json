@@ -9,6 +9,14 @@
       "title": "Star Wars: A New Hope",
       "rating": "5",
       "id": 2
+    },
+    {
+      "title": "Emoji Movie",
+      "id": 3
+    },
+    {
+      "title": "Jurassic Park",
+      "id": 4
     }
   ]
 }

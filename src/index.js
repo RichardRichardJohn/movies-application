@@ -3,7 +3,7 @@
  */
 import 'bootstrap'
 import $ from 'jquery'
-import {getMovies} from './api.js';
+import {getMovies, userPost} from './api.js';
 // import {getMovies()} from '/src/api.js'
 //import '../movieStyle.css'
 
@@ -32,11 +32,11 @@ $(document).ready(function(){
 // const {getMovies} = require('./api.js');
 
 getMovies().then((movies) => {
-    $(".x").toggleClass("invisible");
+
     console.log('Here are all the movies:');
     movies.forEach(({title, rating, id}) => {
         console.log(`id#${id} - ${title} - rating: ${rating}`);
-        // $('.movieList').append(`<li>${title}</li>`);
+
         $("table").append(`<tr><td>${id}</td><td>${title}</td><td>${rating}</td><td><button>delete</button></td></tr>`);
     });
 
@@ -47,5 +47,13 @@ getMovies().then((movies) => {
 
 $("#addMV").on("click",function(){
 
-    $(".movieList").append(`<td>$("#addMovie").val()</td><td>$("#addRating").val()</td>`)
+    let mTitle = $('#addMovie').val();
+    let mRating = $('addRating').val();
+event.preventDefault();
+    userPost({title: mTitle, rating: mRating}).then();
+    console.log($('#addRating').val());
+
+    // movie.title, mobie.rating
+    $(".movieList").append(`<td>${movie.title},</td><td>${movie.rating}</td>`)
 })
+
