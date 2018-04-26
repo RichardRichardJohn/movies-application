@@ -48,12 +48,18 @@ getMovies().then((movies) => {
 $("#addMV").on("click",function(){
 
     let mTitle = $('#addMovie').val();
-    let mRating = $('addRating').val();
-event.preventDefault();
+    let mRating = $('#addRating').val();
+    event.preventDefault();
     userPost({title: mTitle, rating: mRating}).then();
-    console.log($('#addRating').val());
 
-    // movie.title, mobie.rating
-    $(".movieList").append(`<td>${movie.title},</td><td>${movie.rating}</td>`)
+
+    getMovies().then((movies) => {
+        $('.movieList').html('');
+
+        movies.forEach(({title, rating, id}) => {
+
+            $("table").append(`<tr><td>${id}</td><td>${title}</td><td>${rating}</td><td><button>delete</button></td></tr>`);
+        }
+        )});
 })
 
