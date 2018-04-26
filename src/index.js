@@ -53,6 +53,13 @@ $("#addMV").on("click",function(){
     userPost({title: mTitle, rating: mRating}).then();
 
 
-    $(".movieList").append(`</td><td>${mTitle},</td><td>${mRating}</td>`)
+    getMovies().then((movies) => {
+        $('.movieList').html('');
+
+        movies.forEach(({title, rating, id}) => {
+
+            $("table").append(`<tr><td>${id}</td><td>${title}</td><td>${rating}</td><td><button>delete</button></td></tr>`);
+        }
+        )});
 })
 
