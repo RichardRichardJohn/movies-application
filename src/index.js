@@ -38,7 +38,9 @@ getMovies().then((movies) => {
     movies.forEach(({title, rating, id}) => {
         // localMovie = movies.map();
         console.log(`id#${id} - ${title} - rating: ${rating}`);
-        $("table").append(`<tr><td>${id}</td><td>${title}</td><td>${rating}</td><td><button class="deletebutton">Delete</button><button class="editbutton" data-id="${id}">Edit</button></td></tr> `);
+        $("table").append(`<tr><td>${id}</td><td>${title}</td>
+                <td>${rating}</td><td><button class="deletebutton">Delete</button>
+                <button class="editbutton" data-id="${id}">Edit</button></td></tr> `);
     });
 
 }).catch((error) => {
@@ -57,4 +59,19 @@ $('#addMV').click((e) => {
     addMovies({title, rating}).then(movie => {
         const movieRow = movieDisplayer(movie.title, movie.rating, movie.id);
         $(".movieList").append(movieRow)
-    });})
+    });
+
+    $('#addMovie').val('');
+    $('#addRating').val('');
+
+
+});
+
+$('.additionalMovie').on('click', '.deletebutton', (e)=>{
+    e.preventDefault();
+    console.log($(e.target).data('id'));
+    $(e.target).parent('h3').remove();
+    deleteMovies($(e.target).data('id'));
+
+
+});

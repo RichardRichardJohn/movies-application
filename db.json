@@ -44,6 +44,11 @@
       "title": "the Stranger",
       "rating": "2",
       "id": 9
+    },
+    {
+      "title": "The Lego Movie",
+      "rating": "3",
+      "id": 10
     }
   ]
 }
