@@ -34,7 +34,18 @@
             <form>
                 <label for="addMovie">New</label>
                 <input id="addMovie" type="text"placeholder="Movie">
-                <input id="addRating" type="text" placeholder="Rating">
+                <select id="addRating" Rating>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6" disabled="true">6</option>
+                    <option value="7" disabled="true">7</option>
+                </select>
+
+                <!--<input id="addRating" type="text" placeholder="Rating">-->
 
                 <button id="addMV" type="submit">Add</button>
             </form>

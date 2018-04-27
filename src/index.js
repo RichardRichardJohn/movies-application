@@ -51,7 +51,6 @@ getMovies().then((movies) => {
 
 $('#addMV').click((e) => {
     e.preventDefault();
-    console.log('test');
     const title = $('#addMovie').val();
     const rating = $('#addRating').val();
     // location.reload();
@@ -74,4 +73,17 @@ $('.movieList').on('click', '.deletebutton', (e)=>{
     deleteMovies($(e.target).parent().prev().prev().prev().html());
 
 
+});
+
+$(".editbutton").on('click', '.editMovies', (e)=>{
+    e.preventDefault();
+    const number = ($(e.target).parent().prev().prev().data('id'));
+    let title = $(".newtitle"+number).val();
+    let rating = $(".stars"+number).val();
+    post.editMovies($(e.target).data("id"), {title: title, rating: rating});
+    setTimeout(function(){
+        createCards();
+    }, 300);
+    $('.modal').css("display", "none");
+    $('.modal-backdrop').css("display", "none")
 });
