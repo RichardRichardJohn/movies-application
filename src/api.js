@@ -17,8 +17,25 @@ module.exports = {
 
     },
     movieDisplayer: (title, rating, id) =>{
-    return`<tr><td>${id}</td><td>${title}</td><td>${rating}</td><td><button class="deletebutton">Delete</button><button class="editbutton" data-id="${id}">Edit</button></td></tr> `;
+    return`<tr class="newRow">
+                <td>${id}</td>
+                <td>${title}</td>
+                <td>${rating}</td>
+                <td>
+                <button class="deletebutton" >Delete</button>
+                <button class="editbutton" data-id="${id}">Edit</button>
+                </td>
+            </tr> `;
 },
+
+    deleteMovies: (id) => {
+        const theMovies =`/api/movies/${id}`;
+        const options = {
+            method: 'DELETE',
+        };
+        return fetch(theMovies, options)
+            .then(response => response.json());
+    },
 };
 
 //

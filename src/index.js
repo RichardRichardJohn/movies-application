@@ -3,7 +3,7 @@
  */
 import 'bootstrap'
 import $ from 'jquery'
-import {getMovies, addMovies, movieDisplayer} from './api.js';
+import {getMovies, addMovies, movieDisplayer, deleteMovies} from './api.js';
 // import {getMovies()} from '/src/api.js'
 //import '../movieStyle.css'
 
@@ -67,10 +67,10 @@ $('#addMV').click((e) => {
 
 });
 
-$('.additionalMovie').on('click', '.deletebutton', (e)=>{
+$('.movieList').on('click', '.deletebutton', (e)=>{
     e.preventDefault();
     console.log($(e.target).data('id'));
-    $(e.target).parent('h3').remove();
+    $(e.target).parent().parent().remove();
     deleteMovies($(e.target).data('id'));
 
 
