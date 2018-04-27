@@ -19,6 +19,11 @@
       "title": "The Violent Femmes",
       "rating": "8",
       "id": 4
+    },
+    {
+      "title": "Batman",
+      "rating": "2",
+      "id": 5
     }
   ]
 }
