@@ -69,9 +69,9 @@ $('#addMV').click((e) => {
 
 $('.movieList').on('click', '.deletebutton', (e)=>{
     e.preventDefault();
-    console.log($(e.target).data('id'));
+    console.log($(e.target).parent().prev().prev().prev().html());
     $(e.target).parent().parent().remove();
-    deleteMovies($(e.target).data('id'));
+    deleteMovies($(e.target).parent().prev().prev().prev().html());
 
 
 });
