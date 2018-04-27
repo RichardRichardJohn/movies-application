@@ -6,3 +6,10 @@ html, body {
 .loadGif    {
     position: absolute;
 }
+
+.special {
+    font-weight: bold !important;
+    color: #373740 !important;
+    background: #c7e9ff !important;
+
+}

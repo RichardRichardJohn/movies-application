@@ -22,8 +22,8 @@ module.exports = {
                 <td>${title}</td>
                 <td>${rating}</td>
                 <td>
-                <button class="deletebutton" >Delete</button>
                 <button class="editbutton" data-id="${id}">Edit</button>
+                <button class="deletebutton" >Delete</button>
                 </td>
             </tr> `;
 },

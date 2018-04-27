@@ -38,9 +38,15 @@ getMovies().then((movies) => {
     movies.forEach(({title, rating, id}) => {
         // localMovie = movies.map();
         console.log(`id#${id} - ${title} - rating: ${rating}`);
-        $("table").append(`<tr><td>${id}</td><td>${title}</td>
-                <td>${rating}</td><td><button class="deletebutton">Delete</button>
-                <button class="editbutton" data-id="${id}">Edit</button></td></tr> `);
+        $("table").append(`<tr>
+                                <td>${id}</td>
+                                    <td>${title}</td>
+                                    <td>${rating}</td>
+                                    <td>
+                                    <button class="editbutton" data-id="${id}">Edit</button>
+                                    <button class="deletebutton">Delete</button>
+                                </td>
+                            </tr> `);
     });
 
 }).catch((error) => {
@@ -61,7 +67,7 @@ $('#addMV').click((e) => {
     });
 
     $('#addMovie').val('');
-    $('#addRating').val('');
+    $('#addRating').val(0);
 
 
 });
