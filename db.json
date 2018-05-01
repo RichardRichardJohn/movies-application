@@ -6,14 +6,24 @@
       "id": 1
     },
     {
-      "title": "Star Wars: A New Hope",
-      "rating": "5",
+      "title": "Casablanca 2: the Reckoning",
+      "rating": "9",
       "id": 2
     },
     {
-      "title": "Casablanca 2: the reckoning",
-      "rating": "9",
+      "title": "Hello World 2: Hello Again",
+      "rating": "3",
       "id": 3
+    },
+    {
+      "title": "The Violent Femmes",
+      "rating": "8",
+      "id": 4
+    },
+    {
+      "title": "Batman",
+      "rating": "2",
+      "id": 5
     }
   ]
 }
